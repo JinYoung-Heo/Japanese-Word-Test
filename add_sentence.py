@@ -51,3 +51,4 @@ for i in range(beg, end) :
         df.iloc[i,j+4] = df.iloc[i,j+4][:k]
 
 df.to_csv('C:/Users/wlsdu/Desktop/대학/jlpt/jlpt단어장/jlpt_word.csv', index = False)
+# revise
