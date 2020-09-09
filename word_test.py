@@ -8,16 +8,23 @@ def printBoundary() :
         print('-', end='')
     print()
 
-def sortingWidth(word) :
+def printWord(word, nSpace) :
     d = len(word) - 2
     w = d*2
-    print(word+' '*(8-w), end='')
+    print(word+' '*(nSpace-w), end='')
 
 def printOneLine(l) :
-    for i in range(3) :
-        sortingWidth(l[i])
+    printWord(l[0], 5)
+    printWord(l[1], 7)
+    printWord(l[2], 0)
     print()
 
+def printNum(i) :
+    if i < 9 :
+        print('0' + str(i+1), end=' ')
+    else :
+        print(i+1, end=' ')
+        
 def test(df) :
     while (True) :
         print('날짜 선택 : 0')
@@ -87,22 +94,19 @@ def test(df) :
                 elif n == '3' :
                     i = 0
                     while i<len(df2) :
-                        print(i+1, end=' ')
+                        printNum(i)
                         if df2.iloc[i,0] == df2.iloc[i,1] :
-                            print(df2.iloc[i,1])
+                            print(df2.iloc[i,0], end='')
                         else :
-                            print(df2.iloc[i,0], end=' ')
-                            print(df2.iloc[i,1])
-                        c = input()
+                            printWord(df2.iloc[i,0], 5) # 줄 띄움 없음
+                            printWord(df2.iloc[i,1], 7)
+                        c = input() # 여기서 ENTER누르면 줄 띄워짐
                         if c == '' :
                             i += 1
                 elif n == '4' :
                     i = 0
                     while i<len(df2) :
-                        if i < 9 :
-                            print('0' + str(i+1), end=' ')
-                        else :
-                            print(i+1, end=' ')
+                        printNum(i)
                         printOneLine(df2.iloc[i].values.tolist())
                         i += 1
                     printBoundary()
