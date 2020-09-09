@@ -8,6 +8,16 @@ def printBoundary() :
         print('-', end='')
     print()
 
+def sortingWidth(word) :
+    d = len(word) - 2
+    w = d*2
+    print(word+' '*(8-w), end='')
+
+def printOneLine(l) :
+    for i in range(3) :
+        sortingWidth(l[i])
+    print()
+
 def test(df) :
     while (True) :
         print('날짜 선택 : 0')
@@ -89,7 +99,11 @@ def test(df) :
                 elif n == '4' :
                     i = 0
                     while i<len(df2) :
-                        print(i+1, df2.iloc[i,0], df2.iloc[i,1], df2.iloc[i,2])
+                        if i < 9 :
+                            print('0' + str(i+1), end=' ')
+                        else :
+                            print(i+1, end=' ')
+                        printOneLine(df2.iloc[i].values.tolist())
                         i += 1
                     printBoundary()
                     while True :
