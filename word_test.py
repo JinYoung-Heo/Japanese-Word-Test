@@ -96,10 +96,11 @@ def test(df) :
                     while i<len(df2) :
                         printNum(i)
                         if df2.iloc[i,0] == df2.iloc[i,1] :
-                            print(df2.iloc[i,0], end='')
+                            print(df2.iloc[i,0])
                         else :
-                            printWord(df2.iloc[i,0], 5) # 줄 띄움 없음
+                            printWord(df2.iloc[i,0], 5)
                             printWord(df2.iloc[i,1], 7)
+                            print()
                         c = input() # 여기서 ENTER누르면 줄 띄워짐
                         if c == '' :
                             i += 1
