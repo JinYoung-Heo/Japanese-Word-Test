@@ -1,3 +1,9 @@
+# Summary
+* Built a local database by crawling data of vocabularies and example sentences on the internet.
+* Showed vocabs and example sentences according to a mode users select.
+* The whole word set consisted of 30 sets(1 set per day). Those words were for a Japanese language proficiency certificate.
+* Users can learn vocab and take vocab tests through this program.
+
 # wordTest
  crawling words and taking a word test2<br/>
  <br/>
